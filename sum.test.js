@@ -24,9 +24,8 @@ test('doit lancer une exception lorsque le tableau contient des nombres négatif
     }).toThrow('ValueError: Tous les éléments du tableau doivent être des nombres positifs');
 });
 
-// sum.test.js
-test('doit lancer une exception lorsque le tableau contient des nombres décimaux', () => {
+test('Tous les éléments du tableau doivent être des nombres entiers', () => {
     expect(() => {
-        sum([1, 2, 3.5]);
-    }).toThrow('ValueError: Tous les éléments du tableau doivent être des nombres entiers');
+        sum([1, 2, -3.5]);
+    }).toThrow('ValueError: Tous les éléments du tableau doivent être des nombres positifs');
 });

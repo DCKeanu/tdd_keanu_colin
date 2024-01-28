@@ -28,5 +28,5 @@ module.exports = function sum(array) {
     if (array.length === 1) return array[0];
 
     // Utilise la méthode 'reduce' pour calculer la somme des éléments du tableau
-    return array.reduce((a, b) => a + b, 0);
+    return parseFloat(array.reduce((a, b) => a + b, 0).toFixed(2));
 }
