@@ -11,3 +11,9 @@ test('somme des éléments du tableau vide doit être 0', () => {
 test('somme des éléments du tableau [5] doit être 5', () => {
     expect(sum([5])).toBe(5);
 });
+
+test('doit lancer une exception lorsque l\'entrée n\'est pas un tableau', () => {
+    expect(() => {
+        sum(123);
+    }).toThrow('ValueError: L\'entrée doit être un tableau');
+});
