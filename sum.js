@@ -1,5 +1,10 @@
 // Exporte une fonction nommée 'sum'
 module.exports = function sum(array) {
+    // Si l'entrée n'est pas un tableau, lance une exception
+    if (!Array.isArray(array)) {
+        throw new Error('ValueError: L\'entrée doit être un tableau');
+    }
+
     // Si le tableau est vide, retourne 0
     if (array.length === 0) return 0;
 
