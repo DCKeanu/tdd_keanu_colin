@@ -11,6 +11,14 @@ module.exports = function sum(array) {
     // Si le tableau contient un seul élément, retourne cet élément
     if (array.length === 1) return array[0];
 
+    // Parcourt chaque élément 'value' du tableau 'array'
+    for (let value of array) {
+        // Si l'élément n'est pas un nombre, lance une exception
+        if (typeof value !== 'number') {
+            throw new Error('TypeError: Tous les éléments du tableau doivent être des nombres');
+        }
+    }
+
     // Utilise la méthode 'reduce' pour calculer la somme des éléments du tableau
     // 'reduce' prend une fonction anonyme (a, b) => a + b comme argument
     // Cette fonction est appliquée à chaque élément du tableau
