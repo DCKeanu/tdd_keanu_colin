@@ -17,3 +17,9 @@ test('doit lancer une exception lorsque l\'entrée n\'est pas un tableau', () =>
         sum(123);
     }).toThrow('ValueError: L\'entrée doit être un tableau');
 });
+// sum.test.js
+test('doit lancer une exception lorsque le tableau contient des nombres négatifs', () => {
+    expect(() => {
+        sum([1, 2, -3]);
+    }).toThrow('ValueError: Tous les éléments du tableau doivent être des nombres positifs');
+});
