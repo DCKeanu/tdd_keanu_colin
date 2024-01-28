@@ -2,6 +2,8 @@
 module.exports = function sum(array) {
     // Si le tableau est vide, retourne 0
     if (array.length === 0) return 0;
+    // Si le tableau contient un seul élément, retourne cet élément
+    if (array.length === 1) return array[0];
     // Initialise une variable 'total' à 0 pour stocker la somme des éléments du tableau
     let total = 0;
     // Parcourt chaque élément 'value' du tableau 'array'
