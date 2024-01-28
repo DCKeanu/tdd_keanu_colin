@@ -1,6 +1,6 @@
-// Exporte une fonction nommée 'sum'
+// sum.js
 module.exports = function sum(array) {
-    // Si l'entrée n'est pas un tableau, lance une exception
+    // Vérifie que l'entrée est un tableau
     if (!Array.isArray(array)) {
         throw new Error('ValueError: L\'entrée doit être un tableau');
     }
@@ -11,19 +11,14 @@ module.exports = function sum(array) {
     // Si le tableau contient un seul élément, retourne cet élément
     if (array.length === 1) return array[0];
 
-    // Parcourt chaque élément 'value' du tableau 'array'
+    // Parcourt chaque élément du tableau
     for (let value of array) {
-        // Si l'élément n'est pas un nombre, lance une exception
-        if (typeof value !== 'number') {
-            throw new Error('TypeError: Tous les éléments du tableau doivent être des nombres');
+        // Si l'élément n'est pas un nombre ou est négatif, lance une exception
+        if (typeof value !== 'number' || value < 0) {
+            throw new Error('ValueError: Tous les éléments du tableau doivent être des nombres positifs');
         }
     }
 
     // Utilise la méthode 'reduce' pour calculer la somme des éléments du tableau
-    // 'reduce' prend une fonction anonyme (a, b) => a + b comme argument
-    // Cette fonction est appliquée à chaque élément du tableau
-    // 'a' est l'accumulateur, qui stocke la somme intermédiaire
-    // 'b' est l'élément actuel du tableau
-    // La valeur initiale de l'accumulateur est 0
     return array.reduce((a, b) => a + b, 0);
 }
